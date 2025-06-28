@@ -158,7 +158,11 @@ function toggleBranchPreferenceVisibility() {
 async function handlePredict() {
     const userRank = parseInt(rankInput.value);
     const userCategory = categorySelect.value;
-    const userSpecialCategories = specialCategoryInput.value.split(',').map(s => s.trim().toUpperCase()).filter(s => s); // Split, trim, uppercase, remove empty
+    // Get special categories, clean up input, filter out empty strings
+    const userSpecialCategories = specialCategoryInput.value
+                                    .split(',')
+                                    .map(s => s.trim().toUpperCase())
+                                    .filter(s => s);
 
     if (isNaN(userRank) || userRank <= 0) {
         alert("Please enter a valid KEAM rank.");
@@ -211,7 +215,9 @@ async function loadAllotmentData() {
 
     for (const phase of ['PHASE1', 'PHASE2']) {
         for (const code of courseCodes) {
-            const filePath = `data/${phase}/${code}.json`;
+            // *** THE CRITICAL CHANGE IS HERE ***
+            // Adjust filePath to directly access folders at root
+            const filePath = `${phase}/${code}.json`; 
             try {
                 const response = await fetch(filePath);
                 if (!response.ok) {
@@ -251,25 +257,26 @@ async function predictColleges(userRank, userCategory, userSpecialCategories, se
                 const collegeCode = collegeEntry["College Code"];
                 const collegeName = collegeEntry["Name of College"];
 
-                // Determine the last rank for the user's category
-                let lastRankForCategory = parseRank(collegeEntry[userCategory]);
+                // Determine the last rank for the user's main category
+                // Use parseRank to handle '-', null, or invalid numbers
+                let lastRankForMainCategory = parseRank(collegeEntry[userCategory]);
 
                 let isEligible = false;
-                let eligibleRankReason = '';
+                let eligibleRankDetail = `Your Rank: ${userRank}`; // Base detail string
 
                 // 1. Check eligibility based on the main category
-                if (userRank <= lastRankForCategory) {
+                if (userRank <= lastRankForMainCategory) {
                     isEligible = true;
-                    eligibleRankReason = `(Last Rank ${lastRankForCategory})`;
+                    eligibleRankDetail += ` (Last Rank ${lastRankForMainCategory})`;
                 }
 
                 // 2. Check for special category eligibility if not already eligible by main category
                 // This logic assumes special categories provide eligibility if their code is present
-                // AND the user's rank fits the SM (State Merit) rank.
-                // This might need refinement based on exact KEAM special category rules if they have separate ranks.
+                // AND the user's rank fits the SM (State Merit) rank for that college/course.
+                // This is a common pattern when specific special category ranks aren't provided.
                 if (!isEligible && userSpecialCategories.length > 0) {
                     const collegeSpecialCategoriesString = collegeEntry["Special Categories"] || "";
-                    const smRankForCollege = parseRank(collegeEntry["SM"]);
+                    const smRankForCollege = parseRank(collegeEntry["SM"]); // Special categories often tied to SM rank
 
                     const hasMatchingSpecialCategory = userSpecialCategories.some(specialCat =>
                         collegeSpecialCategoriesString.includes(specialCat)
@@ -277,7 +284,7 @@ async function predictColleges(userRank, userCategory, userSpecialCategories, se
 
                     if (hasMatchingSpecialCategory && userRank <= smRankForCollege) {
                         isEligible = true;
-                        eligibleRankReason = `(Eligible via Special Category, SM Last Rank ${smRankForCollege})`;
+                        eligibleRankDetail = `Your Rank: ${userRank} (Eligible via Special Category, SM Last Rank ${smRankForCollege})`;
                     }
                 }
 
@@ -293,7 +300,8 @@ async function predictColleges(userRank, userCategory, userSpecialCategories, se
                     const collegeData = eligibleCollegesMap.get(collegeCode);
 
                     // Add eligible course to the college's list
-                    // Prevent duplicates if a course is eligible in both phases or multiple times
+                    // Prevent duplicates if a course is eligible in both phases for the same college
+                    // Only add if this specific course-phase combination isn't already present
                     const courseAlreadyAdded = collegeData.eligibleCourses.some(
                         c => c.code === courseCode && c.phase === phaseKey
                     );
@@ -301,9 +309,8 @@ async function predictColleges(userRank, userCategory, userSpecialCategories, se
                         collegeData.eligibleCourses.push({
                             code: courseCode,
                             name: COURSE_MAP[courseCode] || courseCode,
-                            userRank: userRank,
-                            lastRank: eligibleRankReason, // Display the relevant last rank for context
-                            phase: phaseKey.replace('PHASE', 'Phase ') // "Phase 1" or "Phase 2"
+                            rankDetails: eligibleRankDetail, // Use the detailed rank string
+                            phase: phaseKey.replace('PHASE', 'Phase ') // "Phase 1" or "Phase 2" for display
                         });
                     }
                 }
@@ -353,7 +360,8 @@ function displayColleges(colleges) {
         const ul = document.createElement('ul');
         college.eligibleCourses.forEach(course => {
             const li = document.createElement('li');
-            li.innerHTML = `<strong>${course.name}</strong><br>Your Rank: ${course.userRank} ${course.lastRank} - ${course.phase}`;
+            // Use course.rankDetails directly
+            li.innerHTML = `<strong>${course.name}</strong><br>${course.rankDetails} - ${course.phase}`;
             ul.appendChild(li);
         });
         detailsDiv.appendChild(ul);
