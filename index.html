@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KEAM College Predictor</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>KEAM College Predictor 2025</h1>
+            <p>Find your perfect college and branch based on your KEAM rank.</p>
+        </header>
+
+        <main>
+            <section id="input-section" class="card form-section">
+                <h2>Your Details</h2>
+                <div class="form-group">
+                    <label for="keam-rank">Your KEAM 2025 Rank:</label>
+                    <input type="number" id="keam-rank" placeholder="e.g., 15000" min="1" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="category">Your Category:</label>
+                    <select id="category" required>
+                        <option value="">Select Category</option>
+                        <option value="SM">State Merit (SM)</option>
+                        <option value="EZ">Ezhava (EZ)</option>
+                        <option value="MU">Muslim (MU)</option>
+                        <option value="LA">Latin Catholic (LA)</option>
+                        <option value="BH">Other Backward Hindu (BH)</option>
+                        <option value="DV">Dheevara (DV)</option>
+                        <option value="VK">Viswakarma (VK)</option>
+                        <option value="BX">Kusavan (BX)</option>
+                        <option value="KN">Kudumbi (KN)</option>
+                        <option value="KU">Other Backward Christian (KU)</option>
+                        <option value="SC">Scheduled Caste (SC)</option>
+                        <option value="ST">Scheduled Tribe (ST)</option>
+                        <option value="EW">EWS (EW)</option>
+                        </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="special-category-input">Any Special Category (FW, YN, CC, MG)?</label>
+                    <input type="text" id="special-category-input" placeholder="e.g., FW, YN (comma separated)">
+                    <small>Enter codes from: FW, YN, CC, MG</small>
+                </div>
+
+                <div class="form-group">
+                    <label>Choose Branches:</label>
+                    <div class="radio-group">
+                        <input type="radio" id="all-branches" name="branch-choice" value="all" checked>
+                        <label for="all-branches">All Branches</label>
+                        <input type="radio" id="specified-branches" name="branch-choice" value="specified">
+                        <label for="specified-branches">Specified Branches</label>
+                    </div>
+                </div>
+
+                <div id="branch-preferences-container" class="form-group hidden">
+                    <label>Preferred Branches:</label>
+                    <div id="branch-preferences">
+                        </div>
+                    <button type="button" id="add-preference-btn" class="btn btn-secondary">+ Add More Preference</button>
+                </div>
+
+                <button type="submit" id="predict-btn" class="btn btn-primary">Predict Colleges</button>
+            </section>
+
+            <section id="results-section" class="hidden">
+                <aside id="sidebar">
+                    <h3>Your Input</h3>
+                    <div class="sidebar-info">
+                        <p><strong>Rank:</strong> <span id="sidebar-rank"></span></p>
+                        <p><strong>Category:</strong> <span id="sidebar-category"></span></p>
+                        <p><strong>Special Cat.:</strong> <span id="sidebar-special-category"></span></p>
+                        <p><strong>Branches:</strong> <span id="sidebar-branches"></span></p>
+                        <button class="btn btn-small" id="edit-input-btn">Edit Input</button>
+                    </div>
+                </aside>
+                <div class="main-content">
+                    <h2>Eligible Colleges</h2>
+                    <div id="college-grid" class="college-grid">
+                        </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
