@@ -1,0 +1,40 @@
+[
+  {
+    "College Code": "KTE",
+    "Name of College": "Govt. Rajiv Gandhi Institute of Tech., Kottayam",
+    "Type": "G",
+    "SM": 7312,
+    "EZ": 8232,
+    "MU": 8358,
+    "LA": "-",
+    "BH": "-",
+    "DV": 26264,
+    "VK": 8046,
+    "BX": "-",
+    "KN": 8799,
+    "KU": "-",
+    "SC": 36158,
+    "ST": 51437,
+    "EW": 9145,
+    "Special Categories": "FW:5621"
+  },
+  {
+    "College Code": "IES",
+    "Name of College": "I E S College of Engineering, Thrissur",
+    "Type": "S",
+    "SM": 52272,
+    "EZ": "-",
+    "MU": "-",
+    "LA": "-",
+    "BH": "-",
+    "DV": "-",
+    "VK": "-",
+    "BX": "-",
+    "KN": "-",
+    "KU": "-",
+    "SC": "-",
+    "ST": "-",
+    "EW": "-",
+    "Special Categories": ""
+  }
+]

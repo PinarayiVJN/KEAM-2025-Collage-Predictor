@@ -1,0 +1,40 @@
+[
+  {
+    "College Code": "WYD",
+    "Name of College": "Government Engineering College, Wayanad",
+    "Type": "G",
+    "SM": 22891,
+    "EZ": 23955,
+    "MU": 24158,
+    "LA": "-",
+    "BH": "-",
+    "DV": "-",
+    "VK": 41125,
+    "BX": "-",
+    "KN": "-",
+    "KU": "-",
+    "SC": 51840,
+    "ST": 52035,
+    "EW": 43520,
+    "Special Categories": "FW:14144, PD:37721"
+  },
+  {
+    "College Code": "HGW",
+    "Name of College": "Holy Grace Academy of Engineering, Thrissur",
+    "Type": "S",
+    "SM": 50714,
+    "EZ": "-",
+    "MU": "-",
+    "LA": "-",
+    "BH": "-",
+    "DV": "-",
+    "VK": "-",
+    "BX": "-",
+    "KN": "-",
+    "KU": "-",
+    "SC": "-",
+    "ST": "-",
+    "EW": "-",
+    "Special Categories": ""
+  }
+]

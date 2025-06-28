@@ -1,0 +1,40 @@
+[
+  {
+    "College Code": "CKC",
+    "Name of College": "Christ Knowledge City, Ernakulam",
+    "Type": "S",
+    "SM": 51699,
+    "EZ": "-",
+    "MU": "-",
+    "LA": "-",
+    "BH": "-",
+    "DV": "-",
+    "VK": "-",
+    "BX": "-",
+    "KN": "-",
+    "KU": "-",
+    "SC": "-",
+    "ST": "-",
+    "EW": "-",
+    "Special Categories": ""
+  },
+  {
+    "College Code": "SNG",
+    "Name of College": "Sree Narayana Gurukulam College of Engineering, Ernakulam",
+    "Type": "S",
+    "SM": 41274,
+    "EZ": 48832,
+    "MU": 48598,
+    "LA": 43499,
+    "BH": 47766,
+    "DV": 48911,
+    "VK": "-",
+    "BX": "-",
+    "KN": "-",
+    "KU": "-",
+    "SC": 52469,
+    "ST": "-",
+    "EW": "-",
+    "Special Categories": "FW:25471"
+  }
+]

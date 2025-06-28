@@ -1,0 +1,40 @@
+[
+  {
+    "College Code": "MET",
+    "Name of College": "Mets School of Engineering, Thrissur",
+    "Type": "S",
+    "SM": 42518,
+    "EZ": 47668,
+    "MU": 51585,
+    "LA": null,
+    "BH": null,
+    "DV": null,
+    "VK": null,
+    "BX": 46029,
+    "KN": null,
+    "KU": 44564,
+    "SC": null,
+    "ST": null,
+    "EW": null,
+    "Special Categories": null
+  },
+  {
+    "College Code": "SHR",
+    "Name of College": "Sahrdaya College of Engineering and Technology, Thrissur",
+    "Type": "S",
+    "SM": 29228,
+    "EZ": 31927,
+    "MU": 29415,
+    "LA": null,
+    "BH": 34599,
+    "DV": null,
+    "VK": 29890,
+    "BX": null,
+    "KN": null,
+    "KU": null,
+    "SC": 43242,
+    "ST": null,
+    "EW": null,
+    "Special Categories": "FW:13723"
+  }
+]

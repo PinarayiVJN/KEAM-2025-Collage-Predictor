@@ -1,0 +1,40 @@
+[
+  {
+    "College Code": "MDL",
+    "Name of College": "Model Engineering College, Ernakulam",
+    "Type": "N",
+    "SM": 7809,
+    "EZ": 10846,
+    "MU": 9073,
+    "LA": 8002,
+    "BH": 8047,
+    "DV": 22573,
+    "VK": 14500,
+    "BX": null,
+    "KN": null,
+    "KU": null,
+    "SC": 31467,
+    "ST": null,
+    "EW": 20767,
+    "Special Categories": "FW:7389, MG:16091"
+  },
+  {
+    "College Code": "ASI",
+    "Name of College": "Adi Shankara Institute of Engineering and Technology, Ernakulam",
+    "Type": "S",
+    "SM": 38073,
+    "EZ": 51613,
+    "MU": 43153,
+    "LA": 44892,
+    "BH": 41445,
+    "DV": null,
+    "VK": 41260,
+    "BX": null,
+    "KN": null,
+    "KU": null,
+    "SC": 45305,
+    "ST": null,
+    "EW": null,
+    "Special Categories": "FW:17863"
+  }
+]

@@ -1,0 +1,40 @@
+[
+  {
+    "College Code": "FIT",
+    "Name of College": "Federal Institute of Science and Technology, Ernakulam",
+    "Type": "S",
+    "SM": 27940,
+    "EZ": 34594,
+    "MU": 31541,
+    "LA": 28027,
+    "BH": 28834,
+    "DV": 51254,
+    "VK": "-",
+    "BX": "-",
+    "KN": "-",
+    "KU": "-",
+    "SC": "-",
+    "ST": "-",
+    "EW": 42718,
+    "Special Categories": "FW:18398"
+  },
+  {
+    "College Code": "SIT",
+    "Name of College": "Sarabhai Institute of Science and Technology, Thiruvananthapuram",
+    "Type": "S",
+    "SM": 34159,
+    "EZ": "-",
+    "MU": "-",
+    "LA": "-",
+    "BH": "-",
+    "DV": "-",
+    "VK": "-",
+    "BX": "-",
+    "KN": "-",
+    "KU": "-",
+    "SC": "-",
+    "ST": "-",
+    "EW": "-",
+    "Special Categories": ""
+  }
+]

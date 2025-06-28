@@ -1,0 +1,40 @@
+[
+  {
+    "College Code": "NSS",
+    "Name of College": "N S S College of Engineering, Palakkad",
+    "Type": "G",
+    "SM": 13030,
+    "EZ": 14861,
+    "MU": 13716,
+    "LA": "-",
+    "BH": 15232,
+    "DV": 13714,
+    "VK": 15885,
+    "BX": 41758,
+    "KN": "-",
+    "KU": "-",
+    "SC": 51430,
+    "ST": "-",
+    "EW": 22096,
+    "Special Categories": "CC:33, FW:9955"
+  },
+  {
+    "College Code": "SNM",
+    "Name of College": "SNM Institute of Management and Technology, Ernakulam",
+    "Type": "S",
+    "SM": 49252,
+    "EZ": "-",
+    "MU": "-",
+    "LA": "-",
+    "BH": "-",
+    "DV": "-",
+    "VK": "-",
+    "BX": "-",
+    "KN": "-",
+    "KU": "-",
+    "SC": "-",
+    "ST": "-",
+    "EW": "-",
+    "Special Categories": ""
+  }
+]
